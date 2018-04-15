@@ -1,0 +1,16 @@
+{
+    "name": "eslint-config-lglong519",
+    "version": "1.0.0",
+    "author": "lglong519",
+    "description": "lglong519 eslint config",
+    "main": ".eslintrc.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/lglong519/eslint-config.git"
+    },
+    "homepage": "https://github.com/lglong519/eslint-config",
+    "peerDependencies": {
+        "eslint": ">=4.0.0"
+    },
+    "private": true
+}
