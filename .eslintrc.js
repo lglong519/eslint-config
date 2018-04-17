@@ -1,6 +1,9 @@
 /*
  * https://eslint.org/docs/rules/
  * The extends property value can omit the eslint-config- prefix of the package name.
+ * [r] recommend
+ * [f] fixable
+ * [m] modify
  */
 module.exports = {
 	'root': true,
@@ -30,32 +33,40 @@ module.exports = {
 		'no-console': 0, // [r][m]
 		'no-constant-condition': 2, // [r] disallow constant expressions in conditions,while(true)
 		'no-control-regex': 2, // [r] disallow control characters in regular expressions
-		'no-debugger': 0, // [r][m]
-		'no-dupe-args': 2,
-		'no-dupe-keys': 2,
-		'no-duplicate-case': 2,
-		'no-empty': 2,
-		'no-empty-character-class': 2,
-		'no-ex-assign': 2,
-		'no-extra-boolean-cast': 2,
-		'no-extra-parens': 2,
-		'no-extra-semi': 2,
-		'no-func-assign': 2,
-		'no-inner-declarations': 2,
-		'no-invalid-regexp': 2,
-		'no-irregular-whitespace': 2,
-		'no-obj-calls': 2,
-		'no-prototype-builtins': 0,
-		'no-regex-spaces': 2,
-		'no-sparse-arrays': 2,
+		'no-debugger': 0, // [rf][m]
+		'no-dupe-args': 2, // [r] disallow duplicate arguments in function definitions
+		'no-dupe-keys': 2, // [r] disallow duplicate keys in object literals
+		'no-duplicate-case': 2, // [r] disallow duplicate test expressions in case clauses of switch statements.
+		'no-empty': 2, // [r] disallow empty block statements
+		'no-empty-character-class': 2, // [r] disallow empty character classes in regular expressions,e.g. []
+		'no-ex-assign': 2, // [r] disallow reassigning exceptions(exceptions === e) in catch clauses
+		'no-extra-boolean-cast': 2, // [rf] disallow unnecessary boolean casts,e.g. use Boolean instead of !!
+		'no-extra-parens': 2, // [f]
+		'no-extra-semi': 2, // [rf]
+		'no-func-assign': 2, // [r]
+		'no-inner-declarations': [
+			'error',
+			'both'	// [r] 'functions'(default) or 'both'(function and var)
+		],
+		'no-invalid-regexp': 2, // [r] (default) { "allowConstructorFlags": ["u", "y"] }
+		'no-irregular-whitespace': 2, // [r] disallow irregular whitespace outside of strings and comments
+		'no-obj-calls': 2, // [r] disallows calling the Math, JSON and Reflect objects as functions.
+		'no-prototype-builtins': 0, // disallows calling some Object.prototype methods directly on object instances
+		'no-regex-spaces': 2, // [rf] disallow multiple spaces
+		'no-sparse-arrays': 2, // [r] e.g. [,]
 		'no-template-curly-in-string': 0,
-		'no-unexpected-multiline': 2,
-		'no-unreachable': 2,
-		'no-unsafe-finally': 2,
-		'no-unsafe-negation': 2,
-		'use-isnan': 2,
-		'valid-jsdoc': 2,
-		'valid-typeof': 2,
+		'no-unexpected-multiline': 2, // [r] disallow confusing multiline expressions
+		'no-unreachable': 2, // [r] disallow unreachable code after return, throw, continue, and break statements
+		'no-unsafe-finally': 2, // [r]
+		'no-unsafe-negation': 2, // [rf]
+		'use-isnan': 2, // [r] require calls to isNaN() when checking for NaN
+		'valid-jsdoc': [
+			'error',
+			{
+				'requireReturn': false,
+			}
+		], // [f][m]
+		'valid-typeof': 2, // [r] enforce comparing typeof expressions against valid strings,e.g. typeof foo === "strng"
 		// Best Practices
 		'accessor-pairs': 0, // Enforce getter and setter pairs in objects
 		'array-callback-return': 0, // Enforce return statements in callbacks of array methods
@@ -208,7 +219,7 @@ module.exports = {
 		'line-comment-position': 0, //
 		'linebreak-style': [
 			0,
-			'windows'
+			'windows' 	// unix or windows
 		], // enforce consistent linebreak style
 		'lines-around-comment': 2, //
 		'lines-between-class-members': 2, //
@@ -219,7 +230,7 @@ module.exports = {
 		'max-params': 0, //
 		'max-statements': 0, //
 		'max-statements-per-line': 0, //
-		'multiline-comment-style': 2, //
+		'multiline-comment-style': 0, // [f][m]
 		'multiline-ternary': 0, //
 		'new-cap': 0, //
 		'new-parens': 0, // [f][m] require parentheses when invoking a constructor with no arguments
@@ -232,7 +243,14 @@ module.exports = {
 		'no-mixed-operators': 0, //
 		'no-mixed-spaces-and-tabs': 2, //
 		'no-multi-assign': 0, //
-		'no-multiple-empty-lines': 2, //
+		'no-multiple-empty-lines': [
+			'error',
+			{
+				max: 1,
+				maxBOF: 1,
+				maxEOF: 0
+			}
+		], // [f][m]
 		'no-negated-condition': 0, //
 		'no-nested-ternary': 0, //
 		'no-new-object': 0, //
