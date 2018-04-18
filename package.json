@@ -9,7 +9,7 @@
         "url": "git://github.com/lglong519/eslint-config.git"
     },
     "homepage": "https://github.com/lglong519/eslint-config",
-    "peerDependencies": {
+    "dependencies": {
         "eslint": ">=4.0.0"
     },
     "private": true
