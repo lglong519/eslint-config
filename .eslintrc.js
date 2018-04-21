@@ -76,7 +76,10 @@ module.exports = {
 		'consistent-return': 0, //
 		'curly': 0, // [f][m] enforce consistent brace style for all control statements
 		'default-case': 0, //
-		'dot-location': 2, //
+		'dot-location': [
+			2,
+			'property'
+		], //
 		'dot-notation': 2, //
 		'eqeqeq': 1, //
 		'guard-for-in': 0, //
@@ -166,83 +169,92 @@ module.exports = {
 		'no-restricted-modules': 0, //
 		'no-sync': 0, //
 		// Stylistic Issues
-		'array-bracket-newline': 2, //
-		'array-bracket-spacing': 2, //
-		'array-element-newline': 2, //
-		'block-spacing': 2, //
-		'brace-style': 2, //
+		'array-bracket-newline': [
+			2,
+			'consistent'
+		], // [f][m] 数组括号强制换行,consistent:一致的换行符
+		'array-bracket-spacing': 2, // [f] 在括号内使用空格
+		'array-element-newline': [
+			0,
+			{
+				multiline: true, // 当某个元素内有换行时，其他元素全部换行
+				minItems: 2
+			},
+		], // [f][m] 数组元素间使用换行
+		'block-spacing': 2, // [f]
+		'brace-style': 2, // [f] 代码块中使用一致的大括号风格
 		'camelcase': 0, //
-		'capitalized-comments': 0, // [f][m]
+		'capitalized-comments': 0, // [f][m] 首字母大写
 		'comma-dangle': [
 			'error',
 			{
-				'arrays': 'never',
+				'arrays': 'ignore',
 				'objects': 'ignore',
 				'imports': 'never',
 				'exports': 'never',
 				'functions': 'never',
 			}
 		], // [f][m] Require or disallow trailing commas
-		'comma-spacing': 2, //
+		'comma-spacing': 2, // [f] 逗号前后使用一致的空格
 		'comma-style': 2, // enforce consistent comma style
 		'computed-property-spacing': [
 			2,
 			'never'
-		], // enforce consistent spacing inside computed property brackets,"never" 没有空格,"always" 有空格
-		'consistent-this': 0, //
-		'eol-last': 1, // [f][m] require or disallow newline at the end of files
-		'func-call-spacing': 2, //
-		'func-name-matching': 0, //
-		'func-names': 0, //
+		], // [f] enforce consistent spacing inside computed property brackets,"never" 没有空格,"always" 有空格
+		'consistent-this': 0, // 上下文使用一致的命名
+		'eol-last': 2, // [f][m] require or disallow newline at the end of files
+		'func-call-spacing': 2, // [f] 函数名与括号间的空格
+		'func-name-matching': 0, // var foo = function foo() {};
+		'func-names': 0, // 禁止匿名函数
 		'func-style': [
 			0,
 			'declaration'
-		], //
-		'function-paren-newline': 2, //
-		'id-blacklist': 0, //
+		], // 使用一致的定义函数的风格
+		'function-paren-newline': 2, // [f] 函数括号内使用一致的换行
+		'id-blacklist': 0, // 禁用指定的标识符
 		'id-length': 0, //
-		'id-match': 0, //
-		'implicit-arrow-linebreak': 2, //
+		'id-match': 0, // 标识符匹配特定的正则表达式
+		'implicit-arrow-linebreak': 2, // [f]
 		'indent': [
 			'error',
 			'tab'
-		], //
-		'jsx-quotes': 2, //
+		], // [f]
+		'jsx-quotes': 2, // [f]
 		'key-spacing': [
 			2,
 			{
 				'beforeColon': false,
 				'afterColon': true,
 			}
-		], //
-		'keyword-spacing': 2, //
+		], // [f]
+		'keyword-spacing': 2, // [f]
 		'line-comment-position': 0, //
 		'linebreak-style': [
 			0,
-			'windows' 	// unix or windows
+			'windows' 	// [f] unix or windows
 		], // enforce consistent linebreak style
-		'lines-around-comment': 2, //
-		'lines-between-class-members': 2, //
+		'lines-around-comment': 2, // [f]
+		'lines-between-class-members': 2, // [f]
 		'max-depth': 0, //
-		'max-len': 0, //
+		'max-len': 0, // 一行的最大长度
 		'max-lines': 0, //
-		'max-nested-callbacks': 0, //
-		'max-params': 0, //
+		'max-nested-callbacks': 0, // 回调嵌套
+		'max-params': 0, // 参数数量
 		'max-statements': 0, //
 		'max-statements-per-line': 0, //
 		'multiline-comment-style': 0, // [f][m]
 		'multiline-ternary': 0, //
-		'new-cap': 0, //
+		'new-cap': 2, // [m] 构造函数首字母大写
 		'new-parens': 0, // [f][m] require parentheses when invoking a constructor with no arguments
 		'newline-per-chained-call': 0, // [f][m] require a newline after each call in a method chain
 		'no-array-constructor': 0, //
-		'no-bitwise': 0, //
+		'no-bitwise': 0, // 按位运算符
 		'no-continue': 0, //
 		'no-inline-comments': 0, //
-		'no-lonely-if': 2, //
+		'no-lonely-if': 2, // [f]
 		'no-mixed-operators': 0, //
-		'no-mixed-spaces-and-tabs': 2, //
-		'no-multi-assign': 0, //
+		'no-mixed-spaces-and-tabs': 2, // [r]
+		'no-multi-assign': 0, // 禁止连续赋值
 		'no-multiple-empty-lines': [
 			'error',
 			{
@@ -251,25 +263,38 @@ module.exports = {
 				maxEOF: 0
 			}
 		], // [f][m]
-		'no-negated-condition': 0, //
-		'no-nested-ternary': 0, //
+		'no-negated-condition': 0, // if(!a){}
+		'no-nested-ternary': 0, // 嵌套三元表达式
 		'no-new-object': 0, //
 		'no-plusplus': 0, //
-		'no-restricted-syntax': 0, //
+		'no-restricted-syntax': 0, // 禁用指定的语法，如 with(){}
 		'no-tabs': 0, //
 		'no-ternary': 0, //
 		'no-trailing-spaces': 2, // [f]
-		'no-underscore-dangle': 0, //
-		'no-unneeded-ternary': 2, // [f]
+		'no-underscore-dangle': 2, // 禁用 /^_|_$/
+		'no-unneeded-ternary': 2, // [f] 优先不使用三元
 		'no-whitespace-before-property': 2, // [f]
-		'nonblock-statement-body-position': 2, // [f]
-		'object-curly-newline': 0, // [f] enforce consistent line breaks inside braces
+		'nonblock-statement-body-position': 2, // [f] 没大括号的条件语句主体必需同一行
+		'object-curly-newline': [
+			2,
+			{
+				consistent: true
+			}
+		], // [f] enforce consistent line breaks inside braces
 		'object-curly-spacing': 2, // [f]
-		'object-property-newline': 2, // [f]
+		'object-property-newline': [
+			2,
+			{
+				allowAllPropertiesOnSameLine: true
+			}
+		], // [f] enforce placing object properties on separate lines
 		'one-var': 0, //
-		'one-var-declaration-per-line': 2, // [f]
-		'operator-assignment': 2, // [f]
-		'operator-linebreak': 2, // [f]
+		'one-var-declaration-per-line': [
+			2,
+			'always'
+		], // [f][m] 连续声明必需换行
+		'operator-assignment': 2, // [f] 简化赋值操作 str+'s' => `${str}s`
+		'operator-linebreak': [2, 'before'], // [f] 换行使用一致风格的操作符
 		'padded-blocks': [
 			2,
 			{
@@ -287,23 +312,32 @@ module.exports = {
 			'error',
 			'always'
 		], //
-		'semi-spacing': 2, //
-		'semi-style': 2, //
+		'semi-spacing': [
+			2,
+			{
+				'before': false,
+				'after': true
+			}
+		], // [f] enforce consistent spacing before and after semicolons
+		'semi-style': [
+			2,
+			'last'
+		], // [f] enforce location of semicolons
 		'sort-keys': 0, //
-		'sort-vars': 0, // [f][m]
+		'sort-vars': 2, // [f]
 		'space-before-blocks': 2, // 强制在块之前使用一致的空格
 		'space-before-function-paren': [
 			2,
 			'always'
-		], //
-		'space-in-parens': 2, // 圆括号内使用一致的空格
-		'space-infix-ops': 2, // 要求操作符周围有空格
-		'space-unary-ops': 2, // 在一元操作符前后使用一致的空格
-		'spaced-comment': 2, // 在注释中 // 或 /* 使用一致的空格
-		'switch-colon-spacing': 2, //
-		'template-tag-spacing': 2, //
-		'unicode-bom': 2, // Require or disallow Unicode byte order mark (BOM) 字节顺序标记=>Unicode 签名
-		'wrap-regex': 2, // Require parenthesis around regex literals
+		], // [f]
+		'space-in-parens': 2, // [f] 圆括号内使用一致的空格
+		'space-infix-ops': 2, // [f] 要求操作符周围有空格
+		'space-unary-ops': 2, // [f] 在一元操作符前后使用一致的空格
+		'spaced-comment': 2, // [f] 在注释中 // 或 /* 使用一致的空格
+		'switch-colon-spacing': 2, // [f]
+		'template-tag-spacing': 2, // [f]
+		'unicode-bom': 2, // [f] Require or disallow Unicode byte order mark (BOM) 字节顺序标记=>Unicode 签名
+		'wrap-regex': 2, // [f] Require parenthesis around regex literals
 		// ECMAScript 6
 		'arrow-body-style': 2, // [f]
 		'arrow-parens': 2, // [f]
@@ -321,7 +355,7 @@ module.exports = {
 		'no-useless-computed-key': 2, // [f]
 		'no-useless-constructor': 0, //
 		'no-useless-rename': 2, // [f]
-		'no-var': 2, // [f]
+		'no-var': 0, // [f][m]
 		'object-shorthand': 2, // [f]
 		'prefer-arrow-callback': 2, // [f]
 		'prefer-const': 0, // [f][] require const declarations for variables that are never reassigned after declared
