@@ -81,82 +81,85 @@ module.exports = {
 		'dot-location': [
 			2,
 			'property'
-		], //
-		'dot-notation': 2, //
-		'eqeqeq': 1, //
+		], // [f]
+		'dot-notation': 2, // [f] 属性尽可能地使用点号
+		'eqeqeq': 1, // [f]
 		'guard-for-in': 0, //
 		'no-alert': 0, //
 		'no-caller': 0, //
-		'no-case-declarations': 2, //
-		'no-div-regex': 0, //
-		'no-else-return': 2, //
+		'no-case-declarations': 2, // [r] 不允许在 case 子句中使用词法声明
+		'no-div-regex': 0, // 禁止除法操作符显式的出现在正则表达式开始的位置
+		'no-else-return': 2, // [f]
 		'no-empty-function': 1, // [m]
-		'no-empty-pattern': 2, //
-		'no-eq-null': 0, //
+		'no-empty-pattern': 2, // [r] 禁止使用空解构模式
+		'no-eq-null': 0, // 禁止在没有类型检查操作符的情况下与 null 进行比较
 		'no-eval': 0, //
-		'no-extend-native': 0, //
-		'no-extra-bind': 2, //
-		'no-extra-label': 2, //
-		'no-fallthrough': 2, //
-		'no-floating-decimal': 2, //
-		'no-global-assign': 2, //
-		'no-implicit-coercion': 2, //
-		'no-implicit-globals': 0, //
-		'no-implied-eval': 0, //
-		'no-invalid-this': 0, //
-		'no-iterator': 0, //
+		'no-extend-native': 0, // 禁止扩展原生类型
+		'no-extra-bind': 2, // [f]
+		'no-extra-label': 2, // [f]
+		'no-fallthrough': 2, // [r] 禁止 case 语句落空
+		'no-floating-decimal': 0, // [f][m]
+		'no-global-assign': 2, // [r]
+		'no-implicit-coercion': 0, // [f][m] 禁止使用短符号进行类型转换
+		'no-implicit-globals': 0, // 禁止在全局范围内使用变量声明和 function 声明
+		'no-implied-eval': 0, // 禁止使用类似 eval() 的方法
+		'no-invalid-this': 0, // 禁止 this 关键字出现在类和类对象之外
+		'no-iterator': 0, // 禁用 __iterator__ 属性
 		'no-labels': 0, //
-		'no-lone-blocks': 0, //
-		'no-loop-func': 0, //
+		'no-lone-blocks': 0, // 禁用不必要的嵌套块
+		'no-loop-func': 0, // 禁止在循环中出现 function 声明和表达式
 		'no-magic-numbers': 0, // 含义不明确的数字
-		'no-multi-spaces': 2, //
+		'no-multi-spaces': 2, // [f]
 		'no-multi-str': 0, //
-		'no-new': 0, //
+		'no-new': 0, // new 必需赋值
 		'no-new-func': 0, //
-		'no-new-wrappers': 0, //
-		'no-octal': 2, //
-		'no-octal-escape': 0, //
-		'no-param-reassign': 0, //
+		'no-new-wrappers': 0, // 禁止对 String 等使用 new
+		'no-octal': 2, // [r] 禁用八进制字面量
+		'no-octal-escape': 0, // 禁止在字符串中使用八进制转义序列
+		'no-param-reassign': 0, // 禁止对 function 的参数进行重新赋值
 		'no-proto': 0, //
-		'no-redeclare': 2, //
-		'no-restricted-properties': 0, //
-		'no-return-assign': 0, //
+		'no-redeclare': 2, // [r]
+		'no-restricted-properties': 0, // 禁止使用对象的某些属性
+		'no-return-assign': 2, // [m] 禁止在 return 语句中使用赋值语句
 		'no-return-await': 0, //
-		'no-script-url': 0, //
-		'no-self-assign': 2, //
+		'no-script-url': 0, // 禁止使用 javascript: url
+		'no-self-assign': 2, // [r]
 		'no-self-compare': 0, //
-		'no-sequences': 0, //
-		'no-throw-literal': 0, //
+		'no-sequences': 0, // 禁用逗号操作符
+		'no-throw-literal': 2, // [m] 禁止抛出异常字面量
 		'no-unmodified-loop-condition': 0, //
 		'no-unused-expressions': 0, //
-		'no-unused-labels': 2, //
+		'no-unused-labels': 2, // [rf]
 		'no-useless-call': 0, //
 		'no-useless-concat': 0, //
-		'no-useless-escape': 2, //
-		'no-useless-return': 2, //
+		'no-useless-escape': 2, // [r] 禁用不必要的转义字符
+		'no-useless-return': 2, // [f]
 		'no-void': 0, //
 		'no-warning-comments': 0, //
 		'no-with': 0, //
-		'prefer-promise-reject-errors': 0, //
-		'radix': 0, //
-		'require-await': 0, //
+		'prefer-promise-reject-errors': 0, // 要求使用 Error 对象作为 Promise 拒绝的原因
+		'radix': 0, // 强制在parseInt()使用基数参数
+		'require-await': 0, // async 函数必带 await
 		'vars-on-top': 0, //
 		'wrap-iife': 2, //
-		'yoda': 2, //
+		'yoda': 0, // [m]
 		// *** Strict Mode
-		'strict': 2, //
+		'strict': [
+			2,
+			'safe'
+		], //
 		// *** Variables
 		'init-declarations': 0, //
-		'no-catch-shadow': 0, //
-		'no-delete-var': 2, //
+		'no-catch-shadow': 2, // [m] catch 参数不与外部变量同名
+		'no-delete-var': 2, // [r]
 		'no-label-var': 0, //
-		'no-restricted-globals': 0, //
+		'no-restricted-globals': 0, // 禁用特定的全局变量
 		'no-shadow': 0, //
-		'no-shadow-restricted-names': 0, //
-		'no-undef': 2, //
-		'no-undef-init': 2, //
-		'no-undefined': 0, //
-		'no-unused-vars': 2, //
+		'no-shadow-restricted-names': 2, // [m] 禁止重定义关键字
+		'no-undef': 2, // [r] 禁用未声明的变量，除非它们在 /*global */ 注释中被提到
+		'no-undef-init': 2, // [f] 禁止将变量初始化为 undefined
+		'no-undefined': 2, // [m] 禁止将 undefined 作为标识符
+		'no-unused-vars': 2, // [r]
 		'no-use-before-define': 2, //
 		// *** Node.js and CommonJS
 		'callback-return': 0, //
@@ -164,7 +167,7 @@ module.exports = {
 		'handle-callback-err': 0, //
 		'no-buffer-constructor': 0, //
 		'no-mixed-requires': 0, //
-		'no-new-require': 0, //
+		'no-new-require': 2, // [m]
 		'no-path-concat': 0, //
 		'no-process-env': 0, //
 		'no-process-exit': 0, //
@@ -283,7 +286,10 @@ module.exports = {
 				consistent: true
 			}
 		], // [f] enforce consistent line breaks inside braces
-		'object-curly-spacing': 2, // [f]
+		'object-curly-spacing': [
+			2,
+			'always'
+		], // [f]
 		'object-property-newline': [
 			2,
 			{
