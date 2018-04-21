@@ -1,0 +1,21 @@
+{
+	"onDidClearBookmarkEmitter": {},
+	"onDidClearAllBookmarksEmitter": {},
+	"onDidAddBookmarkEmitter": {},
+	"onDidRemoveBookmarkEmitter": {},
+	"onDidUpdateBookmarkEmitter": {},
+	"bookmarks": [
+		{
+			"fsPath": "$ROOTPATH$/.eslintrc.js",
+			"bookmarks": [
+				28,
+				71,
+				145,
+				147,
+				160,
+				172,
+				342
+			]
+		}
+	]
+}

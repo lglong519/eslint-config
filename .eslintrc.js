@@ -4,6 +4,7 @@
  * [r] recommend
  * [f] fixable
  * [m] modify
+ * [s] Specially for ES6
  */
 module.exports = {
 	'root': true,
@@ -13,6 +14,7 @@ module.exports = {
 		'ecmaFeatures': {
 			'parser': 'babel-eslint',
 			'jsx': true,
+			experimentalObjectRestSpread: true,
 		},
 	},
 	'env': {
@@ -24,7 +26,7 @@ module.exports = {
 		'define': true,
 	},
 	'rules': {
-		// Possible Errors
+		// *** Possible Errors
 		'for-direction': 2, // [m] enforce “for” loop update clause moving the counter in the right direction.
 		'getter-return': 0,
 		'no-await-in-loop': 0,
@@ -67,7 +69,7 @@ module.exports = {
 			}
 		], // [f][m]
 		'valid-typeof': 2, // [r] enforce comparing typeof expressions against valid strings,e.g. typeof foo === "strng"
-		// Best Practices
+		// *** Best Practices
 		'accessor-pairs': 0, // Enforce getter and setter pairs in objects
 		'array-callback-return': 0, // Enforce return statements in callbacks of array methods
 		'block-scoped-var': 0, //
@@ -141,9 +143,9 @@ module.exports = {
 		'vars-on-top': 0, //
 		'wrap-iife': 2, //
 		'yoda': 2, //
-		// Strict Mode
+		// *** Strict Mode
 		'strict': 2, //
-		// Variables
+		// *** Variables
 		'init-declarations': 0, //
 		'no-catch-shadow': 0, //
 		'no-delete-var': 2, //
@@ -156,7 +158,7 @@ module.exports = {
 		'no-undefined': 0, //
 		'no-unused-vars': 2, //
 		'no-use-before-define': 2, //
-		// Node.js and CommonJS
+		// *** Node.js and CommonJS
 		'callback-return': 0, //
 		'global-require': 0, //
 		'handle-callback-err': 0, //
@@ -168,7 +170,7 @@ module.exports = {
 		'no-process-exit': 0, //
 		'no-restricted-modules': 0, //
 		'no-sync': 0, //
-		// Stylistic Issues
+		// *** Stylistic Issues
 		'array-bracket-newline': [
 			2,
 			'consistent'
@@ -338,37 +340,56 @@ module.exports = {
 		'template-tag-spacing': 2, // [f]
 		'unicode-bom': 2, // [f] Require or disallow Unicode byte order mark (BOM) 字节顺序标记=>Unicode 签名
 		'wrap-regex': 2, // [f] Require parenthesis around regex literals
-		// ECMAScript 6
-		'arrow-body-style': 2, // [f]
-		'arrow-parens': 2, // [f]
+		// *** ECMAScript 6
+		'arrow-body-style': [
+			2,
+			'as-needed'
+		], // [f]
+		'arrow-parens': [
+			2,
+			'as-needed'
+		], // [f]
 		'arrow-spacing': 2, // [f] 强制箭头函数的箭头前后使用一致的空格
-		'constructor-super': 2, // [r]
-		'generator-star-spacing': 2, // [f]
+		'constructor-super': 2, // [r] 在构造函数中有 super() 的调用
+		'generator-star-spacing': [
+			2,
+			{
+				'before': false, 'after': true
+			}
+		], // [f]
 		'no-class-assign': 2, // [f]
-		'no-confusing-arrow': 2, // [f]
+		'no-confusing-arrow': 0, // [f][m]
 		'no-const-assign': 2, // [r]
-		'no-dupe-class-members': 2, // [r]
+		'no-dupe-class-members': 2, // [r] 禁止类成员中出现重复的名称
 		'no-duplicate-imports': 2, // [f]
 		'no-new-symbol': 2, // [r]
-		'no-restricted-imports': 0, //
+		'no-restricted-imports': 0, // 禁止 import 指定的模块
 		'no-this-before-super': 2, // [r]
 		'no-useless-computed-key': 2, // [f]
-		'no-useless-constructor': 0, //
+		'no-useless-constructor': 2, // [m]
 		'no-useless-rename': 2, // [f]
-		'no-var': 0, // [f][m]
-		'object-shorthand': 2, // [f]
-		'prefer-arrow-callback': 2, // [f]
-		'prefer-const': 0, // [f][] require const declarations for variables that are never reassigned after declared
+		'no-var': 2, // [f][s]
+		'object-shorthand': 2, // [f][s] 使用简写语法
+		'prefer-arrow-callback': 2, // [f][s] 优先使用箭头函数
+		'prefer-const': 0, // [f][m] require const declarations for variables that are never reassigned after declared
 		'prefer-destructuring': 0, //
 		'prefer-numeric-literals': 2, // [f]
 		'prefer-rest-params': 0, //
 		'prefer-spread': 2, // [f]
-		'prefer-template': 2, // [f]
-		'require-yield': 2, // [r]
-		'rest-spread-spacing': 2, // [f]
+		'prefer-template': 2, // [f][s]
+		'require-yield': 2, // [r] 要求 generator 函数内有 yield
+		'rest-spread-spacing': [
+			2,
+			'never'
+		], // [f] 默认值 "never"
 		'sort-imports': 2, // [f]
-		'symbol-description': 0,
+		'symbol-description': 1, // [m] 此处应有描述
 		'template-curly-spacing': 2, // [f]
-		'yield-star-spacing': 2, // [f]
+		'yield-star-spacing': [
+			2,
+			{
+				'before': false, 'after': true
+			}
+		], // [f]
 	},
 };
