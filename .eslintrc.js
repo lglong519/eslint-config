@@ -18,12 +18,39 @@ module.exports = {
 		},
 	},
 	'env': {
-		'node': true,
-		'es6': true,
 		browser: true,
+		node: true,
+		commonjs: true,
+		'shared-node-browser': true,
+		es6: true,
+		worker: true,
+		amd: true,
+		mocha: true,
+		// jasmine: true,
+		// jest: true,
+		// phantomjs: true,
+		// protractor: true,
+		// qunit: true,
+		// prototypejs: true,
+		// shelljs: true,
+		// meteor: true,
+		mongo: true,
+		// applescript: true,
+		// nashorn: true,
+		serviceworker: true,
+		// atomtest: true,
+		// embertest: true,
+		// webextensions: true,
+		// greasemonkey: true,
 	},
+	'plugins': [
+		'html' // 支持 html/vue
+	],
 	'globals': {
-		'define': true,
+		wx: false,
+		getApp: false,
+		Page: false,
+		getCurrentPages: false,
 	},
 	'rules': {
 		// *** Possible Errors
@@ -332,7 +359,7 @@ module.exports = {
 			'last'
 		], // [f] enforce location of semicolons
 		'sort-keys': 0, //
-		'sort-vars': 2, // [f]
+		'sort-vars': 0, // [f][m] 如果变量已赋值将无法排序
 		'space-before-blocks': 2, // 强制在块之前使用一致的空格
 		'space-before-function-paren': [
 			2,
