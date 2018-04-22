@@ -276,7 +276,11 @@ module.exports = {
 		'max-statements-per-line': 0, //
 		'multiline-comment-style': 0, // [f][m]
 		'multiline-ternary': 0, //
-		'new-cap': 2, // [m] 构造函数首字母大写
+		'new-cap': [
+			2, {
+				'capIsNew': false
+			}
+		], // new + 构造函数首字母大写
 		'new-parens': 0, // [f][m] require parentheses when invoking a constructor with no arguments
 		'newline-per-chained-call': 0, // [f][m] require a newline after each call in a method chain
 		'no-array-constructor': 0, //
