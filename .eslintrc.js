@@ -307,7 +307,7 @@ module.exports = {
 		'no-tabs': 0, //
 		'no-ternary': 0, //
 		'no-trailing-spaces': 2, // [f]
-		'no-underscore-dangle': 2, // 禁用 /^_|_$/
+		'no-underscore-dangle': 0, // [m] 禁用 /^_|_$/
 		'no-unneeded-ternary': 2, // [f] 优先不使用三元
 		'no-whitespace-before-property': 2, // [f]
 		'nonblock-statement-body-position': 2, // [f] 没大括号的条件语句主体必需同一行
@@ -413,7 +413,7 @@ module.exports = {
 		'prefer-numeric-literals': 2, // [f]
 		'prefer-rest-params': 0, //
 		'prefer-spread': 2, // [f]
-		'prefer-template': 2, // [f][s]
+		'prefer-template': 0, // [f][s][m]
 		'require-yield': 2, // [r] 要求 generator 函数内有 yield
 		'rest-spread-spacing': [
 			2,
