@@ -9,11 +9,12 @@
 module.exports = {
 	'root': true,
 	'parserOptions': {
-		'ecmaVersion': 6,
+		'ecmaVersion': 2017,	// 支持 ES2017
 		'sourceType': 'module',
 		'ecmaFeatures': {
 			'parser': 'babel-eslint',
 			'jsx': true,
+			globalReturn: true,	// 全局 return
 			experimentalObjectRestSpread: true,
 		},
 	},
