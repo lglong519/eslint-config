@@ -49,6 +49,7 @@ module.exports = {
 	],
 	'globals': {
 		wx: false,
+		App: false,
 		getApp: false,
 		Page: false,
 		getCurrentPages: false,
@@ -267,7 +268,7 @@ module.exports = {
 			'windows' 	// [f] unix or windows
 		], // enforce consistent linebreak style
 		'lines-around-comment': 2, // [f]
-		'lines-between-class-members': 2, // [f]
+		'lines-between-class-members': 0, // [f]
 		'max-depth': 0, //
 		'max-len': 0, // 一行的最大长度
 		'max-lines': 0, //
@@ -420,7 +421,7 @@ module.exports = {
 			2,
 			'never'
 		], // [f] 默认值 "never"
-		'sort-imports': 2, // [f]
+		'sort-imports': 0, // [f][m]
 		'symbol-description': 1, // [m] 此处应有描述
 		'template-curly-spacing': 2, // [f]
 		'yield-star-spacing': [
