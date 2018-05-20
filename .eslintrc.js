@@ -187,7 +187,7 @@ module.exports = {
 		'no-shadow-restricted-names': 2, // [m] 禁止重定义关键字
 		'no-undef': 2, // [r] 禁用未声明的变量，除非它们在 /*global */ 注释中被提到
 		'no-undef-init': 2, // [f] 禁止将变量初始化为 undefined
-		'no-undefined': 2, // [m] 禁止将 undefined 作为标识符
+		'no-undefined': 1, // [m] 禁止将 undefined 作为标识符
 		'no-unused-vars': 2, // [r]
 		'no-use-before-define': [
 			2,
@@ -257,7 +257,10 @@ module.exports = {
 		'implicit-arrow-linebreak': 2, // [f]
 		'indent': [
 			'error',
-			'tab'
+			'tab',
+			{
+				'SwitchCase': 1
+			}
 		], // [f]
 		'jsx-quotes': 2, // [f]
 		'key-spacing': [
@@ -375,7 +378,11 @@ module.exports = {
 		'space-before-blocks': 2, // 强制在块之前使用一致的空格
 		'space-before-function-paren': [
 			2,
-			'always'
+			{
+				'anonymous': 'always',
+				'named': 'always', // weapp 是 never
+				'asyncArrow': 'always'
+			}
 		], // [f]
 		'space-in-parens': 2, // [f] 圆括号内使用一致的空格
 		'space-infix-ops': 2, // [f] 要求操作符周围有空格
