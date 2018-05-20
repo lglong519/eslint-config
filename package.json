@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-lglong519",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "lglong519",
     "description": "lglong519 eslint config",
     "main": ".eslintrc.js",

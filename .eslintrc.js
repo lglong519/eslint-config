@@ -189,7 +189,13 @@ module.exports = {
 		'no-undef-init': 2, // [f] 禁止将变量初始化为 undefined
 		'no-undefined': 2, // [m] 禁止将 undefined 作为标识符
 		'no-unused-vars': 2, // [r]
-		'no-use-before-define': 2, //
+		'no-use-before-define': [
+			2,
+			{
+				'functions': false,
+				'classes': true
+			}
+		], //
 		// *** Node.js and CommonJS
 		'callback-return': 0, //
 		'global-require': 0, //
@@ -289,7 +295,7 @@ module.exports = {
 		'no-bitwise': 0, // 按位运算符
 		'no-continue': 0, //
 		'no-inline-comments': 0, //
-		'no-lonely-if': 2, // [f]
+		'no-lonely-if': 0, // [f][m] 有时候 else 里有个单独的 if 语义可能更加清晰
 		'no-mixed-operators': 0, //
 		'no-mixed-spaces-and-tabs': 2, // [r]
 		'no-multi-assign': 0, // 禁止连续赋值
