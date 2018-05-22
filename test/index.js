@@ -1,15 +1,21 @@
+/* Do not try to modify this file */
+
 // fs 路径以命令行为准
 const fs = require('fs');
-let basicPath = 'node_modules/eslint-plugin-lglong519';
+let basicPath = 'node_modules/eslint-config-lglong519';
 let targetPath = `test/${basicPath}`;
-let ckeckPath = `${basicPath}/lib/configs`;
+let ckeckPathA = `${basicPath}/lib/configs`;
+let ckeckPathB = `${basicPath}/lib/utils`;
 // package 复制到 targetPath
-fs.exists(ckeckPath, res => {
-	if (!res) {
-		makeDir(ckeckPath);  
-	}
-	readdir('./', targetPath);
+[ckeckPathA, ckeckPathB].forEach(ckeckPath => {
+	fs.exists(ckeckPath, res => {
+		if (!res) {
+			makeDir(ckeckPath);
+		}
+		readdir('./', targetPath);
+	});
 });
+
 function makeDir (path) {
 	let paths = path.split('/');
 	let target = __dirname;
@@ -35,10 +41,13 @@ function readdir (dir, targetPath) {
 			console.trace(err);
 		} else {
 			files.forEach(item => {
-				if (/^\.|.md$|test/.test(item)) {
-					console.log('omit', item);
+				if (/^\.|\.md$|test|^\.git$|node_modules/.test(item)) {
+					console.log('Omit file/path:', item);
 					return;
 				}
+				item = item.replace('./', '');
+				console.log('Update file/path:', item);
+
 				let source = `${dir}/${item}`;
 				let stats = fs.statSync(source);
 				if (stats.isFile()) {

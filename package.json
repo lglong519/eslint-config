@@ -3,7 +3,7 @@
 	"version": "2.0.0",
 	"author": "lglong519",
 	"description": "lglong519 eslint config",
-	"main": ".eslintrc.js",
+	"main": "standard.js",
 	"scripts": {
 		"test": "cd test && npm install"
 	},

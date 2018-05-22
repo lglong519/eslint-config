@@ -23,8 +23,22 @@ Add `lglong519` to the extends section of your `.eslintrc` configuration file. Y
     ]
 }
 ```
+	or
+	
+```json
+{
+    "extends": [
+        "lglong519/simple"
+    ]
+}
+```
 
 ## Test preparation
 ```bash
-npm test
+$ npm test
+```
+
+## Update test files
+```bash
+$ node test
 ```
