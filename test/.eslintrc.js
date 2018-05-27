@@ -1,3 +1,3 @@
 module.exports = {
-	extends: 'lglong519'
+	extends: 'lglong519/standard'
 };
