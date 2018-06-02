@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-lglong519",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"author": "lglong519",
 	"description": "lglong519 eslint config",
 	"main": "standard.js",
@@ -11,7 +11,7 @@
 		"type": "git",
 		"url": "git://github.com/lglong519/eslint-config.git"
 	},
-	"homepage": "https://github.com/lglong519/eslint-config",
+	"homepage": "https://github.com/lglong519/eslint-config/blob/master/README.md",
 	"dependencies": {
 		"eslint": ">=4.0.0",
 		"eslint-plugin-html": ">=4.0.0"
