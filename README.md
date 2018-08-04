@@ -1,25 +1,25 @@
-# eslint-config-lglong519
+# eslint-config-teslint
 
 Eslint config of lglong519
 
 ## Installation
 
-You'll first need to install `eslint-config-lglong519`:
+You'll first need to install `eslint-config-teslint`:
 
 ```
-$ npm install eslint-config-lglong519 --save-dev
+$ npm install eslint-config-teslint --save-dev
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-config-lglong519` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-config-teslint` globally.
 
 ## Usage
 
-Add `lglong519` to the extends section of your `.eslintrc` configuration file. You can omit the `eslint-config-` prefix:
+Add `teslint` to the extends section of your `.eslintrc` configuration file. You can omit the `eslint-config-` prefix:
 
 ```json
 {
     "extends": [
-        "lglong519"
+        "teslint"
     ]
 }
 ```
@@ -28,7 +28,7 @@ Add `lglong519` to the extends section of your `.eslintrc` configuration file. Y
 ```json
 {
     "extends": [
-        "lglong519/simple"
+        "teslint/simple"
     ]
 }
 ```

@@ -1,8 +1,9 @@
 {
-	"name": "eslint-config-lglong519",
-	"version": "2.0.3",
+	"name": "eslint-config-teslint",
+	"version": "3.0.0",
 	"author": "lglong519",
 	"description": "lglong519 eslint config",
+	"keywords": ["lglong519"],
 	"main": "standard.js",
 	"scripts": {
 		"test": "cd test && npm install"
@@ -13,8 +14,10 @@
 	},
 	"homepage": "https://github.com/lglong519/eslint-config/blob/master/README.md",
 	"dependencies": {
+		"babel-eslint": ">=8.2.3",
 		"eslint": ">=4.0.0",
+		"eslint-config-alloy": ">=1.4.2",
 		"eslint-plugin-html": ">=4.0.0"
 	},
-	"private": true
+	"license": "ISC"
 }

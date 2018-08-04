@@ -1,16 +1,18 @@
 {
-  "name": "eslint-config-lglong519-test",
-  "version": "1.0.0",
-  "description": "## preparation \t`node test`",
-  "main": "index.js",
-  "devDependencies": {
-	"eslint": ">=4.0.0",
-	"eslint-plugin-html": ">=4.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "eslint-config-lglong519-test",
+	"version": "3.0.0",
+	"description": "## preparation \t`node test`",
+	"main": "index.js",
+	"devDependencies": {
+		"babel-eslint": "^8.2.3",
+		"eslint": ">=4.0.0",
+		"eslint-plugin-html": ">=4.0.0",
+		"eslint-config-alloy": "^1.4.2"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
 }
