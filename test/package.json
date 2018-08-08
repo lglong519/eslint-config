@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-lglong519-test",
-	"version": "3.0.4",
+	"version": "3.0.5",
 	"description": "## preparation \t`node test`",
 	"main": "index.js",
 	"devDependencies": {

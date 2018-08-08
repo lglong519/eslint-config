@@ -1,9 +1,11 @@
 {
 	"name": "eslint-config-teslint",
-	"version": "3.0.4",
+	"version": "3.0.5",
 	"author": "lglong519",
 	"description": "lglong519 eslint config",
-	"keywords": ["teslint"],
+	"keywords": [
+		"teslint"
+	],
 	"main": "standard.js",
 	"scripts": {
 		"test": "cd test && npm install && cd ../ && node test"

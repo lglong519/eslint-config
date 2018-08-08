@@ -34,7 +34,7 @@ Add `teslint` to the extends section of your `.eslintrc` configuration file. You
 }
 ```
 
-## Test
+## Test preparation
 ```bash
 $ npm run test
 ```
