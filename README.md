@@ -1,3 +1,4 @@
+```DO NOT USE THIS PACKAGE UNLESS YOU KNOW WHAT YOU ARE DOING```
 # eslint-config-teslint
 
 Eslint config of lglong519
@@ -35,10 +36,5 @@ Add `teslint` to the extends section of your `.eslintrc` configuration file. You
 
 ## Test preparation
 ```bash
-$ npm test
-```
-
-## Update test files
-```bash
-$ node test
+$ npm run test
 ```
